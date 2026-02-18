@@ -1,0 +1,24 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="PandawanTechnology\GeolocBundle\Entity\Address"
+            repository-class="PandawanTechnology\GeolocBundle\Repository\AddressRepository">
+        <unique-constraints>
+            <unique-constraint columns="street_id,number,repetitor"/>
+        </unique-constraints>
+
+        <id name="id" type="integer" column="id">
+            <generator />
+        </id>
+
+        <field name="number" length="5"/>
+        <field name="repetitor" length="15" nullable="true"/>
+        <field name="latitude" type="decimal" precision="10" scale="8" />
+        <field name="longitude" type="decimal" precision="11" scale="8" />
+
+        <many-to-one field="street" target-entity="PandawanTechnology\GeolocBundle\Entity\Street" inversed-by="addresses">
+            <join-column nullable="false" on-delete="CASCADE"/>
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

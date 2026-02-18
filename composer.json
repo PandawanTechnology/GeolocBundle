@@ -1,0 +1,43 @@
+{
+    "name": "pandawan-technology/geoloc-bundle",
+    "type": "symfony-bundle",
+    "description": "Provides addresses management for Symfony's application",
+    "keywords": ["geoloc"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Xavier COUREAU",
+            "email": "xavier@pandawan-technology.com"
+        }
+    ],
+    "require": {
+        "ext-zlib": "*",
+        "doctrine/doctrine-bundle": "^3.3.x-dev",
+        "doctrine/orm": "3.7.x-dev",
+        "league/csv": "^9.0",
+        "symfony/http-client": "^7.4|^8.0",
+        "symfony/http-kernel": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "dev-master",
+        "phpunit/phpunit": "^12"
+    },
+    "suggest": {
+        "symfony/http-client": "^7.4|^8.0",
+        "symfony/twig-bundle": "^7.4|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PandawanTechnology\\GeolocBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PandawanTechnology\\GeolocBundle\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "sort-packages": true
+    }
+}
