@@ -11,8 +11,8 @@ use PandawanTechnology\GeolocBundle\Migrations\Version20260121183342;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+
 use function Symfony\Component\DependencyInjection\Loader\Configurator\env;
-use function Symfony\Component\DependencyInjection\Loader\Configurator\param;
 
 class PandawanTechnologyGeolocBundle extends AbstractBundle
 {
@@ -33,7 +33,6 @@ class PandawanTechnologyGeolocBundle extends AbstractBundle
                 ->args([$shareDir])
         ;
     }
-
 
     public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
     {

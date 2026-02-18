@@ -10,7 +10,6 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 #[AsCommand(
     name: 'pandawan-geoloc:data:download',
@@ -19,9 +18,10 @@ use Symfony\Component\DependencyInjection\Attribute\Autowire;
 class DownloaderCommand extends Command
 {
     public const string FILE_NAME = 'france.csv';
+
     public function __construct(
         private readonly string $sharedDir,
-        private readonly BANDownloader $banDownloader
+        private readonly BANDownloader $banDownloader,
     ) {
         parent::__construct();
     }
@@ -33,7 +33,7 @@ class DownloaderCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $archiveFileName = $this->sharedDir . '/' . static::FILE_NAME;
+        $archiveFileName = $this->sharedDir.'/'.static::FILE_NAME;
 
         if ($input->getOption('download')) {
             $this->banDownloader->download($archiveFileName.'.gz');

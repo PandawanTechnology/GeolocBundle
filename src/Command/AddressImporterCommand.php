@@ -29,7 +29,7 @@ class AddressImporterCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $fileName = $this->shareDir . '/' . DownloaderCommand::FILE_NAME;
+        $fileName = $this->shareDir.'/'.DownloaderCommand::FILE_NAME;
 
         $csvReader = Reader::from($fileName)
                      ->setHeaderOffset(0)
