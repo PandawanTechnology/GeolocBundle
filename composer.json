@@ -12,8 +12,8 @@
     ],
     "require": {
         "ext-zlib": "*",
-        "doctrine/doctrine-bundle": "^3.3.x-dev",
-        "doctrine/orm": "3.7.x-dev",
+        "doctrine/doctrine-bundle": "^3.0",
+        "doctrine/orm": "^3.0",
         "league/csv": "^9.0",
         "symfony/http-client": "^7.4|^8.0",
         "symfony/http-kernel": "^7.4|^8.0"
